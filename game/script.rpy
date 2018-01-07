@@ -91,55 +91,55 @@ label start:
     # images directory to show it.
 
     #scene bg room
-    scene bg office desk with dissolve
-    #scene bg airport exit
+    #scene bg office desk with dissolve
+    scene bg airport exit
     #show bg office main
 
     # This shows a character sprite. A placeholder is used, but you can
     # replace it by adding a file named "eileen happy.png" to the images
     # directory.
 
-    show alandra normal #at Position(xalign=.5, yalign =0.0) with moveinright
-    a "testing character sprites"
-    "alandra"
-    l "lucas"
-    show lucas normal at right
-    "this is lucas, the shirtless" #, all hail his shiny nipples"
-    show lucas hand_up
-    "say bye to lucas"
-    #hide lucas
-    "and now say hello to Marcos"
-    show marcos normal at left
-    "normal"
-    show marcos super_happy
-    "super happy"
-    show marcos smirk
-    "smirk"
-    show marcos sad
-    "sad"
-    show marcos happy_no_g
-    "happy without glasses"
-    show marcos happy
-    "happy"
-    show marcos cheeky_no_g
-    "cheeky without glasses"
-    show marcos cheeky
-    "cheeky"
-    show marcos angry
-    "angry"
-    "say bye"
-    hide marcos
-    "and say hi to vincent"
-    show vincent normal
-    "make it rain, dude"
-    show vincent normal2
-    "right on"
-    show vincent cheeky
-    "cheeky"
-    show vincent smile
-    "smile"
-    show vincent smirk
-    "smirk"
+    # show alandra normal #at Position(xalign=.5, yalign =0.0) with moveinright
+    # a "testing character sprites"
+    # "alandra"
+    # l "lucas"
+    # show lucas normal at right
+    # "this is lucas, the shirtless" #, all hail his shiny nipples"
+    # show lucas hand_up
+    # "say bye to lucas"
+    # #hide lucas
+    # "and now say hello to Marcos"
+    # show marcos normal at left
+    # "normal"
+    # show marcos super_happy
+    # "super happy"
+    # show marcos smirk
+    # "smirk"
+    # show marcos sad
+    # "sad"
+    # show marcos happy_no_g
+    # "happy without glasses"
+    # show marcos happy
+    # "happy"
+    # show marcos cheeky_no_g
+    # "cheeky without glasses"
+    # show marcos cheeky
+    # "cheeky"
+    # show marcos angry
+    # "angry"
+    # "say bye"
+    # hide marcos
+    # "and say hi to vincent"
+    # show vincent normal
+    # "make it rain, dude"
+    # show vincent normal2
+    # "right on"
+    # show vincent cheeky
+    # "cheeky"
+    # show vincent smile
+    # "smile"
+    # show vincent smirk
+    # "smirk"
 
 
 
@@ -170,7 +170,7 @@ label start:
     n "By signing this agreement, I agree to the tasks above and will continue to stay neutral throughout the entire session."
 
     #Use player's name, otherwise use the name 'Mia Caroline'
-    $name = (renpy.input("Signature:")).strip() or "Mia Caroline"
+    $name = str((renpy.input("Signature:", exclude='{1234567890[]!#%\/-_=&?!}', length=8)).strip()) or "M.C."
 
     mc general "test general face and name"
     mc blush "test blush"
@@ -191,6 +191,21 @@ label start:
     d "((ARRIVAL))"
 
     n "Explains MC background."
+
+menu:
+    "what should I do?"
+    "Offer a hand to the boy.":
+        "The little boy ignores my hand and tries getting up by himself, before falling back down and continuing to cry."
+        mc "Oops!"
+        jump choice1_done
+    "Try to pick the boy up off the ground.":
+        mc "Oops-2!"
+        jump choice1_done
+    "Take out a Band-Aid and offer it to the boy.":
+        mc "choice 3 dialog"
+        jump choice1_done
+
+label choice1_done:
 
     d "Exploring the town"
 

@@ -306,7 +306,7 @@ screen navigation():
 
         textbutton _("Load") action ShowMenu("load")
 
-        textbutton _("Preferences") action ShowMenu("preferences")
+        textbutton _("Prefs") action ShowMenu("preferences")
 
         if _in_replay:
 
@@ -314,7 +314,7 @@ screen navigation():
 
         elif not main_menu:
 
-            textbutton _("Main Menu") action MainMenu()
+            textbutton _("Menu") action MainMenu()
 
         textbutton _("About") action ShowMenu("about")
 
@@ -330,12 +330,13 @@ screen navigation():
 style navigation_button is gui_button
 style navigation_button_text is gui_button_text
 
+#this bit of code is responsible for adding buttons to menu items
 style navigation_button:
     size_group "navigation"
-    #properties gui.button_properties("navigation_button")
+    properties gui.button_properties("navigation_button")
 
 style navigation_button_text:
-    #properties gui.button_text_properties("navigation_button")
+    properties gui.button_text_properties("navigation_button")
     xalign 0.4
 
 

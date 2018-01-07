@@ -187,7 +187,9 @@ define gui.check_button_borders = Borders(38, 6, 6, 6)
 
 define gui.confirm_button_text_xalign = 0.5
 
-define gui.page_button_borders = Borders(15, 6, 15, 6)
+#define gui.page_button_borders = Borders(15, 6, 15, 6)
+#this part edits the numbers in the save and load menu
+define gui.page_button_borders = Borders(0,0,0,0)
 
 define gui.quick_button_borders = Borders(15, 6, 15, 0)
 define gui.quick_button_text_size = 21
@@ -199,8 +201,8 @@ define gui.quick_button_text_selected_color = gui.accent_color
 ## navigation button.
 
 #define gui.navigation_button_width = 250
-define gui.navigation_button_width = 250
-define gui.navigation_button_heigth = 54
+define gui.navigation_button_width = 300
+define gui.navigation_button_heigth = 104
 
 
 ## Choice Buttons ##############################################################
