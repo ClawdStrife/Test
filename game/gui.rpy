@@ -208,15 +208,19 @@ define gui.navigation_button_heigth = 104
 ## Choice Buttons ##############################################################
 ##
 ## Choice buttons are used in the in-game menus.
+## The images used as background for the button are in the gui folder
+## The name of the images is choice_hover_background and choice_idle_background
 
-define gui.choice_button_width = 1185
+#define gui.choice_button_width = 1185
+define gui.choice_button_width = None
 define gui.choice_button_height = None
 define gui.choice_button_tile = False
-define gui.choice_button_borders = Borders(150, 8, 150, 8)
+#define gui.choice_button_borders = Borders(150, 8, 150, 8)
+define gui.choice_button_borders = Borders(100, 15, 100, 15)
 define gui.choice_button_text_font = gui.text_font
 define gui.choice_button_text_size = gui.text_size
 define gui.choice_button_text_xalign = 0.5
-define gui.choice_button_text_idle_color = "#cccccc"
+define gui.choice_button_text_idle_color = "#29441C"
 define gui.choice_button_text_hover_color = "#ffffff"
 
 

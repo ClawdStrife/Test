@@ -65,6 +65,17 @@ image lucas hand_up =im.FactorScale("lucas_basic_pose1.png",0.25)
 ############################
 ##STRUCTURAL CHARACTERS
 define n = Character(None, kind=nvl, color="#ff0000")
+define narrator = Character(None,
+#what_size=44,
+#what_outlines=[(3, "#0008", 2, 2), (3, "#282", 0, 0)],
+#what_xalign=0.5,
+#what_text_align=0.5,
+#window_background=None,
+window_background="textbox_plain.png",
+#window_yminimum=0,
+#window_xfill=False,
+#window_xalign=0.5
+)
 define d = Character("director", color="#ff008f", window_background="textbox_original.png")
 define u = Character("???")
 ##MC
@@ -75,7 +86,8 @@ define mc = Character ("[name]",
 ##ROMANCE CHARACTERS
 define a = Character ("Alandra")
 define v = Character ("Vincent")
-define l = Character ("Lucas", window_background="textbox_original.png")
+define l = Character ("Lucas", #window_background="textbox_original.png"
+                     )
 define m = Character ("Marcos")
 ##SECONDARY CHARACTERS
 define b = Character("Boss")
@@ -102,7 +114,7 @@ label start:
     # show alandra normal #at Position(xalign=.5, yalign =0.0) with moveinright
     # a "testing character sprites"
     # "alandra"
-    # l "lucas"
+    l "lucas"
     # show lucas normal at right
     # "this is lucas, the shirtless" #, all hail his shiny nipples"
     # show lucas hand_up
