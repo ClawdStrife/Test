@@ -1,0 +1,55 @@
+﻿I'm sorry, but an uncaught exception occurred.
+
+After initialization, but before game start.
+  File "game/screens.rpy", line 287, in prepare_screen
+    screen navigation():
+  File "game/screens.rpy", line 287, in prepare
+    screen navigation():
+  File "game/screens.rpy", line 289, in prepare
+    vbox:
+  File "game/screens.rpy", line 289, in prepare
+    vbox:
+  File "game/screens.rpy", line 297, in prepare
+    if main_menu:
+  File "game/screens.rpy", line 297, in prepare
+    if main_menu:
+  File "game/screens.rpy", line 299, in prepare
+    textbutton _(/s+/s+/s+"Start") action Start()
+SyntaxError: invalid syntax (game/screens.rpy, line 299)
+
+-- Full Traceback ------------------------------------------------------------
+
+Full traceback:
+  File "C:\Users\Switch\Desktop\Games\renpy-6.99.12.4-sdk\renpy\bootstrap.py", line 305, in bootstrap
+    renpy.main.main()
+  File "C:\Users\Switch\Desktop\Games\renpy-6.99.12.4-sdk\renpy\main.py", line 499, in main
+    run(restart)
+  File "C:\Users\Switch\Desktop\Games\renpy-6.99.12.4-sdk\renpy\main.py", line 88, in run
+    renpy.display.screen.prepare_screens()
+  File "C:\Users\Switch\Desktop\Games\renpy-6.99.12.4-sdk\renpy\display\screen.py", line 859, in prepare_screens
+    s.ast.prepare_screen()
+  File "game/screens.rpy", line 287, in prepare_screen
+    screen navigation():
+  File "game/screens.rpy", line 287, in prepare
+    screen navigation():
+  File "game/screens.rpy", line 289, in prepare
+    vbox:
+  File "game/screens.rpy", line 289, in prepare
+    vbox:
+  File "game/screens.rpy", line 297, in prepare
+    if main_menu:
+  File "game/screens.rpy", line 297, in prepare
+    if main_menu:
+  File "game/screens.rpy", line 299, in prepare
+    textbutton _(/s+/s+/s+"Start") action Start()
+  File "C:\Users\Switch\Desktop\Games\renpy-6.99.12.4-sdk\renpy\pyanalysis.py", line 699, in ast_eval
+    return self.ast_eval_literal(expr)[0]
+  File "C:\Users\Switch\Desktop\Games\renpy-6.99.12.4-sdk\renpy\pyanalysis.py", line 683, in ast_eval_literal
+    expr = py_compile(expr, 'eval', ast_node=True)
+  File "C:\Users\Switch\Desktop\Games\renpy-6.99.12.4-sdk\renpy\python.py", line 597, in py_compile
+    raise e
+SyntaxError: invalid syntax (game/screens.rpy, line 299)
+
+Windows-8-6.2.9200
+Ren'Py 6.99.13.2919
+Test 1.0
