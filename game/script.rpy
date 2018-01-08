@@ -98,6 +98,7 @@ define m = Character ("Marcos")
 define b = Character("Boss")
 define g = Character("Gérard")
 define v = Character("Valentina")
+define j = Character("Juan")
 
 #################################################
 # The game starts here.
@@ -401,7 +402,62 @@ label choice2_done:
     "As I start walking towards the staircase to make my way to the room, Gérard puts a hand on my shoulder and stops me."
     g "The hotel is run by a very nice family, but they don’t exactly have all of the necessities that a hotel should have, so you may need to buy some items."
     g "But if you have everything you need, perhaps you should explore the town a little."
-    g "Everything can be reached by foot, but if you’re tired, the hotel can lend you a bike. There’s not much time left before the end of the day so choose carefully which place you want to visit."
+    g "Everything can be reached by foot, but if you’re tired, the hotel can lend you a bike."
+    g " There’s not much time left before the end of the day so choose carefully which place you want to visit."
+
+menu:
+    "(Where should I go?)"
+    "General Store":
+        "I couldn’t bring my toothpaste and shampoo, so I should pick some up now."
+        jump day1_general_store
+    "Town Hall":
+        "This is where the meeting will take place tomorrow, so I want to get a feel of the place."
+        jump day1_town_hall
+    "Church":
+        "The priest would be able to tell me a little bit more about the conflict in the town."
+        jump day1_church
+    "Bar":
+        "I need to relax and unwind a little. A drink will do me some good."
+        jump day1_bar
+    "Market":
+        "I would love to see the local produce they sell here. It’s also good to get a feel for the locals."
+        jump day1_market
+    "Hotel":
+        "I’m exhausted, I’m going to read my book on the comfy red couch in the lobby."
+        jump day1_hotel
+
+label day1_general_store:
+    #Scene info: inside of a convenience store, a few aisles may be in view with some shampoos and soaps.
+    "Wow! They have more choices of toothpaste and shampoo than I expected."
+    "As I browse the aisles, I notice another woman entering the store. Her red frizzy hair covers her face as she bends down to remove a pebble from her sneakers."
+    show alandra normal at Position(xalign=.5, yalign =0.0) with moveinright
+    "As she stretches back up, I briefly notice how tall she is before I am drawn in by her yellow eyes, which, combined with her tanned skin, give her a mystic look."
+    "Her hips are swaying as she continues into the store, and she portrays the self-confidence and grace of a queen."
+    u "Hola, Alandra! How are you doing?"
+    "A twenty-something guy that could come straight out of a surfing video pops around the corner and waves at Alandra."
+    a "Err, hi Juan. I’m fine. Has the package I ordered two weeks ago arrived yet?"
+    j "It has! But are you sure you don’t want {i}my package{/i} instead?"
+
+    jump day2
+
+label day1_town_hall:
+    jump day2
+
+label day1_church:
+    jump day2
+
+label day1_bar:
+    jump day2
+
+label day1_market:
+    jump day2
+
+label day1_hotel:
+    jump day2
+
+
+
+label day2:
 
 #     n "meets Juan"
 #
