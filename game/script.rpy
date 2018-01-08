@@ -82,6 +82,7 @@ window_background="textbox_plain.png",
 )
 define d = Character("director", color="#ff008f", window_background="textbox_original.png")
 define u = Character("???")
+
 ##MC
 define mc = Character ("[name]",
                         image="mc",
@@ -95,6 +96,8 @@ define l = Character ("Lucas", #window_background="textbox_original.png"
 define m = Character ("Marcos")
 ##SECONDARY CHARACTERS
 define b = Character("Boss")
+define g = Character("Gérard")
+define v = Character("Valentina")
 
 #################################################
 # The game starts here.
@@ -156,9 +159,6 @@ label start:
     # "smile"
     # show vincent smirk
     # "smirk"
-
-
-
 
     # These display lines of dialogue.
     menu:
@@ -232,8 +232,8 @@ label start:
     scene bg office desk with Dissolve(.5)
     pause .5
 
-    b "[name], are you paying attention?"
-    mc sad "Yes, sir, you were discussing the new project in Macondo."
+    b "[name!q], are you paying attention?"
+    mc sad "Yes, sir, you were discussing the new project in {b}Macondo{/b}."
     #boss annoyed expression
     b "We discussed that project ten minutes ago."
     mc "..."
@@ -272,40 +272,137 @@ label start:
     mc happy "Found it!"
     mc smile "Great, now all I need to do is exit this area and find the man who is supposed to pick me up and bring me to Macondo."
 
-     #Standing in the arrivals lounge
-     mc pensive "What was his name again? Something with an G…"
-     "Suddenly a young boy of five starts crying as he had fallen on the ground and scratched his knee."
-     #Image of mother carrying all the luggage and a 2 year old toddler in her arms, at a loss for what to do.
-     mc "Hey little guy, did you fall down?"
-     "The teary eyed boy looks at me with his eyes and mouth open wide in an expression between awe and horror."
+    #Standing in the arrivals lounge
+    mc pensive "What was his name again? Something with an G…"
+    "Suddenly a young boy of five starts crying as he had fallen on the ground and scratched his knee."
+    #Image of mother carrying all the luggage and a 2 year old toddler in her arms, at a loss for what to do.
+    mc "Hey little guy, did you fall down?"
+    "The teary eyed boy looks at me with his eyes and mouth open wide in an expression between awe and horror."
 
-     menu:
-         "(What should I do?)"
-         "Offer a hand to the boy.":
-             "The little boy ignores my hand and tries getting up by himself, before falling back down and continuing to cry."
-             mc surprise "Oops!"
-             jump choice1_done
+     #choices tutorial***
 
+menu:
+    "(What should I do?)"
+    "Offer a hand to the boy.":
+        "The little boy ignores my hand and tries getting up by himself, before falling back down and continuing to cry."
+        mc surprise "Oops!"
+        jump choice1_done
+    "Try to pick the boy up off the ground.":
+        "The boy backs away from me and starts crying hysterically."
+        mc sad "I should not have tried that..."
+        jump choice1_done
+    "Take out a Band-Aid and offer it to the boy.":
+        "The little boy looks at the Band-Aid in my hand and nods."
+        mc happy "There you go, all done!"
+        jump choice1_done_success
 
-
-
-# menu:
-#     "what should I do?"
-#     "Offer a hand to the boy.":
-#         "The little boy ignores my hand and tries getting up by himself, before falling back down and continuing to cry."
-#         mc "Oops!"
-#         jump choice1_done
-#     "Try to pick the boy up off the ground.":
-#         mc "Oops-2!"
-#         jump choice1_done
-#     "Take out a Band-Aid and offer it to the boy.":
-#         mc "choice 3 dialog"
-#         jump choice1_done
-#
-# label choice1_done:
+label choice1_done:
+    "Before I can continue calming the child down, the boy’s mother rushes to him and starts scolding him."
+    mc awkward "Sorry, I think I upset him. I was trying to help. Is he okay?"
+    "The child’s mother realizes that I am addressing her. Her eyes widen and the color leaves her face. She hastily drags her crying child away, looking horrified."
+label choice1_done_success:
+    "Out of nowhere, messy black hair with grey wings at the temples appears, and a figure starts running towards me. The strong smell of black coffee overwhelms me."
+    u "Hey! [name!q]! I finally found you!"
+    mc surprise "Uhm, are you the man who is supposed to pick me up?"
+    g "Yup! My name is Gérard, nice to meet you!"
+    "Gérard rushes after the mother and her children and starts conversing with her in Spanish. The woman says something in a frightened tone to Gérard, shoots me a panicked look and hurries off."
+    "As Gérard walks back to my side, I suddenly take notice of his appearance. He is of a medium height, with calculating but kind, brown, eyes set in a tanned face."
+    "He holds out his hand, and as I shake it I feel the thick calluses that mark him as a hard-working man."
+    mc general "So I am guessing you saw what happened earlier?"
+    #Gerard apologetic
+    g "Yes, I did. Sorry for the rude interruption to our introduction, but I wanted to make sure Camelia knows you are not a threat."
+    mc surprise "Why would she think I am a threat?"
+    mc general "Is the situation in the town really that serious?"
+    #Gerard confused
+    g "I thought you had been told about what has been going on."
+    mc "I have, but I didn’t think my appearance here would cause people to get this scared."
+    #Gerard apologetic
+    g "Yeah, I’m sorry about her, it’s been a difficult time for the town lately… But we can talk more about that later."
+    g "For now, let’s drive you to the town and get you settled in!"
+    mc determined "Right, let’s go!"
 #
 #     d "Exploring the town"
 #
+#Scene 2: In the car with Gérard, driving towards Macondo over the highway..
+    scene bg room with Dissolve(.5)
+
+    "I get in the car with Gérard, who quickly drives out of the airport parking lot and onto the highway."
+    mc general "So, Gérard huh? That is a very unusual name for this part of South America. Are you not from around here?"
+    g "Actually, I was born and raised here."
+    g "Been here my whole life in Macondo, I have. My mother was actually from France, though"
+    g "She fell in love with my dad, who lived in Macondo, so she stayed."
+    g "but I guess she couldn't forget about her home. She named me after her favorite French actor."
+    mc "How interesting! So can you speak French?"
+    g "Yes! My mother spoke to me only in French for the first ten years of my life, to make sure I would speak both Spanish and French at a native level."
+    #comment: I think Gerard's English is too fancy. We need to dumb it down if the next statement is going to be true. Also Gerard is probably considered a sage, since people in these kinds of towns has hardly gone to the next town over, let alone know a different language and he speaks three!
+    g "English I learned later on in life so I don’t speak it as well as the other languages."
+    mc "You only have a slight accent. It’s very impressive!"
+    #gerard smiles
+    g "Thanks!"
+    "His smile warms my heart, and the dread that had settled since the encounter with Camelia at the airport, begins to subside."
+    g "So, you are going to be the {b}facilitator{/b} in the town between the {b}town hall{/b} and the {b}Sweet Fruit Company{/b}, right? What made you decide to go into this line of work?"
+
+menu:
+    "(Why am I here?)"
+    "I always liked guiding and helping friends":
+        mc smile "Well, I always liked guiding and helping friends solve their problems. A facilitator does just that, just on a larger scale."
+        mc "I always wanted to work in a job that would allow me to make a difference in the world."
+        mc "Ideally, I would like to help shape this world so that it can become sustainable, to preserve it for future generations."
+        mc "So working as a facilitator can allow me to improve relations between two parties in order to resolve a problem which, if left unresolved or is resolved in a less than ideal manner, could have severe consequences for the planet."
+        #Gerard smiling
+        g "You sound very honorable! I wish kids these days were more like you"
+        mc happy "That’s so sweet of you to say!"
+        jump choice2_done
+    "I didn’t know what else to do":
+        mc general "I just kind of fell into this line of work because I didn’t know what else to do at the time."
+        mc "For the longest time I didn’t know what to do with my life, so I first worked at a bar for a while."
+        mc "I met my now-ex-boyfriend there, and eventually he found me this career opportunity."
+        mc "I don’t know if I would have chosen to be a facilitator without a push from him, but even though we broke up, I still don’t regret this career choice."
+        g "I can understand that. It’s tough to make a career choice when you are young."
+        g "As long as you are happy with where you ended up, it doesn’t matter how you got into it in the first place."
+        mc smile "Exactly! I’m glad you get it."
+        jump choice2_done
+    "This line of work looks great on a resume":
+        mc general "I heard from a man at a local workshop that this line of work looks great on a resume."
+        mc "Although I enjoy being a facilitator, it is not something I want to do for the rest of my life."
+        mc "I really want to help make the world a better place, but I feel that I need a bigger income if I want to actually make an impact."
+        #comment: wait, is Gerard part of one of these organizations? Then you can skip the comment about the language, but then we need to take away his humility about speaking English, because that level of English is seriously too fancy for a townsfolk
+        g "I don’t agree with that. You don’t need money to make a difference."
+        g "Money only corrupts people. Even if I earned nothing I would still try to help people."
+        mc "That’s very honorable, but it’s not small changes I am after."
+        mc "I feel that making a huge difference that can impact future generations can only be achieved by having a lot of money."
+        g "Perhaps, but even small waves will move the ocean."
+
+label choice2_done:
+    "We continue driving along the highway for another hour. Eventually Gérard takes the exit towards Macondo."
+    #comment: this is beautiful
+    "As we drive, the holes in the concrete road become more numerous, making for one bumpy ride."
+    "Eventually, the road morphs into a small, dirt road with various tropical plants creeping up from the sides, trying to reclaim their territory."
+    "The lush green of the forest seems separate from us in the car, until, inevitably, the foliage covering the road thickens until almost no light remains from above the canopy."
+    "Finally, we enter a small town and Gérard stops the car at the only hotel, and my home in the coming weeks."
+
+    #This is a good place to skip forward to when you start the game
+
+    #Scene info: hotel in the background, next to a road or parking lot.
+    g "We’re here! Let me help you with your bags while you go check in."
+    mc awkward "Thanks! That would be a great help."
+
+    #Scene info: Lobby with a comfortable red couch in a corner with a coffee table. Next to a large fan. On the other side of the room is a desk where people check in and check out.
+    u "Welcome to the {b}Green Grass Inn{/b}!"
+    #it would be nice to have a description here
+    v "My name is Valentina Rojas. I run this inn with my husband, Felipe Rojas. How may I help you?"
+    mc general "Hi, I would like to check in if that’s alright."
+    v "Of course, you are the new visitor! [name!q] right? Your room is all ready for you. Did you have a pleasant journey?"
+    #Comment: wait, he works for the hotel too? I'm so confused
+    mc "Yes, Gérard was very helpful. Could you let me know what time is breakfast going to be at?"
+    v "You can have breakfast between 07:00 and 09:00 here on the first floor."
+    v "Here is the key to your room. You will be staying in room 205 on the second floor. We hope you enjoy your stay!"
+    mc smile "Thank you!"
+    "As I start walking towards the staircase to make my way to the room, Gérard puts a hand on my shoulder and stops me."
+    g "The hotel is run by a very nice family, but they don’t exactly have all of the necessities that a hotel should have, so you may need to buy some items."
+    g "But if you have everything you need, perhaps you should explore the town a little."
+    g "Everything can be reached by foot, but if you’re tired, the hotel can lend you a bike. There’s not much time left before the end of the day so choose carefully which place you want to visit."
+
 #     n "meets Juan"
 #
 #     n "get to know locals"
