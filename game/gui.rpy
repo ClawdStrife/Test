@@ -25,8 +25,9 @@ init python:
 ## An accent color used throughout the interface to label and highlight text.
 define gui.accent_color = '#336600'
 
+## TEXT ON MENU BUTTONS COLOR 
 ## The color used for a text button when it is neither selected nor hovered.
-define gui.idle_color = '#ffffff'
+define gui.idle_color = '#00ffff'
 
 ## The small color is used for small text, which needs to be brighter/darker to
 ## achieve the same effect.
@@ -51,7 +52,6 @@ define gui.hover_muted_color = '#adc199'
 define gui.text_color = '#404040'
 define gui.interface_text_color = '#404040'
 
-
 ## Fonts and Font Sizes ########################################################
 
 ## The font used for in-game text.
@@ -61,7 +61,8 @@ define gui.text_font = "Raleway-Regular.ttf"
 define gui.name_text_font = "Niconne-Regular.ttf"
 
 ## The font used for out-of-game text.
-define gui.interface_text_font = "Lato-Regular.ttf"
+#define gui.interface_text_font = "Lato-Regular.ttf"
+define gui.interface_text_font = "Britanic-bold.ttf"
 
 ## The size of normal dialogue text.
 define gui.text_size = 33
@@ -70,16 +71,16 @@ define gui.text_size = 33
 define gui.name_text_size = 60
 
 ## The size of text in the game's user interface.
-define gui.interface_text_size = 36
+define gui.interface_text_size = 70
 
 ## The size of labels in the game's user interface.
-define gui.label_text_size = 42
+define gui.label_text_size = 40
 
 ## The size of text on the notify screen.
 define gui.notify_text_size = 24
 
 ## The size of the game's title.
-define gui.title_text_size = 75
+define gui.title_text_size = 0
 
 
 ## Main and Game Menus #########################################################
@@ -149,7 +150,7 @@ define gui.dialogue_text_xalign = 0.0
 
 ## The width and height of a button, in pixels. If None, Ren'Py computes a size.
 define gui.button_width = None
-define gui.button_height = 54
+define gui.button_height = 140
 
 ## The borders on each side of the button, in left, top, right, bottom order.
 define gui.button_borders = Borders(6, 6, 6, 6)

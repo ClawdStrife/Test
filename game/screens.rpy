@@ -293,13 +293,15 @@ screen navigation():
 
         xpos gui.navigation_xpos
         #xalign 1.0
-        yalign 0.5
+        #yalign 0.5
+        xalign -0.5
+        yalign 0.6
 
         spacing gui.navigation_spacing
 
         if main_menu:
 
-            textbutton _("Start") action Start()
+            textbutton _("START") action Start()
 
         else:
 
@@ -307,9 +309,9 @@ screen navigation():
 
             textbutton _("Save") action ShowMenu("save")
 
-        textbutton _("Load") action ShowMenu("load")
+        textbutton _("LOAD") action ShowMenu("load")
 
-        textbutton _("Prefs") action ShowMenu("preferences")
+        #textbutton _("Prefs") action ShowMenu("preferences")
 
         if _in_replay:
 
@@ -319,15 +321,15 @@ screen navigation():
 
             textbutton _("Menu") action MainMenu()
 
-        textbutton _("About") action ShowMenu("about")
+        #textbutton _("About") action ShowMenu("about")
 
         if renpy.variant("pc"):
 
             ## Help isn't necessary or relevant to mobile devices.
-            textbutton _("Help") action ShowMenu("help")
+            #textbutton _("Help") action ShowMenu("help")
 
             ## The quit button is banned on iOS and unnecessary on Android.
-            textbutton _("Quit") action Quit(confirm=not main_menu)
+            textbutton _("QUIT") action Quit(confirm=not main_menu)
 
 
 style navigation_button is gui_button
@@ -522,7 +524,7 @@ style game_menu_label:
 style game_menu_label_text:
     size gui.title_text_size
     color gui.accent_color
-    yalign 0.5
+    #yalign 0.5
 
 style return_button:
     xpos gui.navigation_xpos
