@@ -2,20 +2,8 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 195: menu statement expects a non-empty block.
-    menu:
-        ^
+File "game/screens.rpy", line 221: expected 'simple_expression' not found.
+    xcenter
+           ^
 
-File "game/script.rpy", line 196: expected statement.
-    "Offer a hand to the boy.":
-                              ^
-
-File "game/script.rpy", line 200: expected statement.
-    "Try to pick the boy up off the ground.":
-                                            ^
-
-File "game/script.rpy", line 203: expected statement.
-    "Take out a Band-Aid and offer it to the boy.":
-                                                  ^
-
-Ren'Py Version: Ren'Py 6.99.12.4.2187
+Ren'Py Version: Ren'Py 6.99.13.2919

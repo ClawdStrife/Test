@@ -159,7 +159,7 @@ label start:
     # These display lines of dialogue.
     menu:
         "Would you like to skip the Contract?"
-        "Yes":
+        "Yes yiitit ugouyt oiyoiypoy oiyypyi ouyoyo":
             jump user_character
         "No":
             n "This contract is the agreement of employment with UniAid, The Sweet Fruit Company, and the city hall of Macondo."
