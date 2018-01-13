@@ -1,4 +1,5 @@
 # The script of the game goes in this file.
+#THIS IS A DUMMY COMMENT
 ############################
 #SCRIPTS
 ############################
