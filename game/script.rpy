@@ -238,8 +238,7 @@ label start:
     #boss annoyed expression
     b "We discussed that project ten minutes ago."
     mc "..."
-    b "*sigh*"
-    b "Go get yourself a cup of coffee and meet me in my office in ten minutes."
+    b "*sigh* Go get yourself a cup of coffee and meet me in my office in ten minutes."
     #Boss’s office (basic brown desk with some maps of the world in the background, with some red markers on it signifying where they are running projects).
     #Boss friendly expression
     b "So, you want to tell me what has been going with you lately?"
@@ -256,8 +255,7 @@ label start:
     mc surprise_blush "Really? I didn’t know."
     mc surprise "Michael is also a really good employee, so I expected his success rate to be better than mine."
     b "Michael? He is good, but he doesn’t have your drive and intuition."
-    b "*sigh*"
-    b "I was hoping I could have you lead the project in Macondo."
+    b "*sigh* I was hoping I could have you lead the project in Macondo."
     b "There is a delicate situation currently unfolding over there, and I need my best employee."
     b "However, if you aren’t feeling up to it I completely understand, and I will have Michael go instead."
     mc "Me? I would love to go!"
@@ -341,7 +339,8 @@ label choice1_done_success:
     #gerard smiles
     g "Thanks!"
     "His smile warms my heart, and the dread that had settled since the encounter with Camelia at the airport, begins to subside."
-    g "So, you are going to be the {b}facilitator{/b} in the town between the {b}town hall{/b} and the {b}Sweet Fruit Company{/b}, right? What made you decide to go into this line of work?"
+    g "So, you are going to be the {b}facilitator{/b} in the town between the {b}town hall{/b} and the {b}Sweet Fruit Company{/b}, right?"
+    g "What made you decide to go into this line of work?"
 
 menu:
     "(Why am I here?)"
@@ -349,7 +348,8 @@ menu:
         mc smile "Well, I always liked guiding and helping friends solve their problems. A facilitator does just that, just on a larger scale."
         mc "I always wanted to work in a job that would allow me to make a difference in the world."
         mc "Ideally, I would like to help shape this world so that it can become sustainable, to preserve it for future generations."
-        mc "So working as a facilitator can allow me to improve relations between two parties in order to resolve a problem which, if left unresolved or is resolved in a less than ideal manner, could have severe consequences for the planet."
+        mc "So working as a facilitator can allow me to improve relations between two parties in order to resolve a problem"
+        mc "If left unresolved or is resolved in a less than ideal manner, could have severe consequences for the planet."
         #Gerard smiling
         g "You sound very honorable! I wish kids these days were more like you"
         mc happy "That’s so sweet of you to say!"
@@ -437,7 +437,36 @@ label day1_general_store:
     "A twenty-something guy that could come straight out of a surfing video pops around the corner and waves at Alandra."
     a "Err, hi Juan. I’m fine. Has the package I ordered two weeks ago arrived yet?"
     j "It has! But are you sure you don’t want {i}my package{/i} instead?"
+    "I watch as Alandra slaps Juan square in the face."
+    j "Ouch!"
+    a "Juan! You’re disgusting!"
+    j "What? Can’t blame a guy for trying, am I right?"
+    a "Ugh. Just get me my mail."
+    j "I’m going, already. Maaan, she’s a tough one to crack."
+    "Juan goes behind the counter and picks up a small cardboard box and hands it to Alandra."
+    a "Thanks!"
+    hide alandra with moveoutleft
+    "As Alandra exits the store, I continue browsing the items in the shop. It’s funny how mysterious everyday products become if they are written in another language."
+    "Although I speak some Spanish, there are a lot of unfamiliar terms on the packages. Some of the products are also labeled with hand-written words in the local dialect, which I don’t understand at all."
+    "I keep walking and choose some items that could come in handy before turning a corner when I crash into something hard."
+    mc surprise_blush "Ouch!" with hpunch
+    "I rub my head and see Juan evaluating me from top to bottom."
+    j "Hola, chica! You should watch where you are going, or you won’t know where you will end up."
+    mc "Sorry, I didn’t see you there."
+    j "No worries, chica! My name is Juan and I work in this convenience store." 
+    j "If there is anything you need, my flower, anything at all, I can help you *wink*."
 
+    menu:
+        "(How will I respond?)"
+        "Get angry":
+            "I got angry"
+            jump exit_shop
+        "Flirt back":
+            "I flirted with him"
+            jump exit_shop
+
+
+    label exit_shop:
     jump day2
 
 label day1_town_hall:
